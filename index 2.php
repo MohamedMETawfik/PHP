@@ -3,7 +3,24 @@
     // using /n on windows >> use the "\r\n"
     $text = "This is line 1\r\nThis is line 2\r\nThis is line 3";
     echo nl2br($text);
+
+
 #2
+
+// strlen
+    $str = "Hello World!";
+    $length = strlen($str);
+    echo "<br>The length of the string is: " . $length;
+
+// substr
+    $str = "Hello World!";
+    $substring = substr($str, 0, 5);
+    echo "<br>The substring is: " . $substring;
+
+// strpos
+    $str = "Hello World!";
+    $position = strpos($str, "World");
+    echo "<br>The position of 'World' in the string is: " . $position;
 
 #3
     echo "<pre>";

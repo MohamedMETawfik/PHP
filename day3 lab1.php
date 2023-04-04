@@ -9,7 +9,7 @@
 <?php
 // define variables and set to empty values
 $nameErr = $emailErr = $genderErr = $AgreeErr = $groupErr = "";
-$name = $email = $gender = $comment = $class_details = $Agree = $group = "";
+$name = $email = $gender = $comment = $class_details = $courses = $Agree = $group = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -47,6 +47,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   } else {
     $class_details = test_input($_POST["class_details"]);
   }
+
+  if(isset($_POST['courses'])&& !empty($_POST['courses'])){
+    $courses = $_POST['courses'];
+}
+
   if (empty($_POST["agree"])) {
     $AgreeErr = "Click here";
   } else {
@@ -88,7 +93,7 @@ function test_input($data) {
   <span class="error">* <?php echo $genderErr;?></span>
   <br><br>
   Select Courses:
-  <select name="courses[]" multiple>
+  <select name="courses" multiple>
     <option value="PHP">PHP</option>
     <option value="JavaScript">JavaScript</option>
     <option value="MySQL">MySQL</option>
@@ -113,6 +118,9 @@ echo "<br>";
 echo $comment;
 echo "<br>";
 echo $gender;
+echo "<br>";
+echo $courses;
+
 ?>
 </body>
 </html>

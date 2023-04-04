@@ -48,8 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $class_details = test_input($_POST["class_details"]);
   }
 
-  if(isset($_GET['courses'])&& !empty($_GET['courses'])){
-    $courses = $_GET['courses'];
+  if(isset($_POST['courses'])&& !empty($_POST['courses'])){
+    $courses = $_POST['courses'];
 }
 
   if (empty($_POST["agree"])) {
